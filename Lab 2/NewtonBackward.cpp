@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    
+  
     int n;
     cout << "Enter no. of terms" << endl;
     cin >> n;
@@ -35,16 +35,18 @@ int main() {
         cout << endl;
     }
 
-    float u = (x - a[0][0]) / (a[1][0] - a[0][0]);
-    float y = a[0][1];
+    float u = (x - a[n - 1][0]) / (a[1][0] - a[0][0]);
+    float y = a[n - 1][1]; 
     float u1 = u;
     float fact = 1;
-    for (int i = 2; i <= n; i++) {
-        y = y + (u1 * a[0][i]) / fact;
-        fact = fact * i;
-        u1 = u1 * (u - (i - 1));
+    int j = 2;  
+    for (int i = n - 2; i >= 0; i--) {
+        y = y + (u1 * a[i][j]) / fact;
+        fact = fact * j; 
+        u1 = u1 * (u + (j - 1));
+        j++;
     }
-    cout << "\nValue at X=" << x << " is = " << y << endl;
+    cout << "\n\nValue at X=" << x << " is = " << y << endl;
 
     return 0;
 }
