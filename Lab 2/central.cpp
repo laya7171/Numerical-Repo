@@ -62,4 +62,4 @@ int main() {
     cout << "Hence, f(" << x << ") = " << result;
 
     return 0;
-}
+}  
